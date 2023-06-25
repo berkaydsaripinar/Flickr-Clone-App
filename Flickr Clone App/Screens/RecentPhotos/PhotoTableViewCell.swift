@@ -2,7 +2,7 @@
 //  PhotoTableViewCell.swift
 //  Flickr Clone App
 //
-//  Created by yasin on 17.06.2023.
+//  Created by BDS on 17.06.2023.
 //
 
 import UIKit
@@ -15,13 +15,17 @@ class PhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
 
     @IBOutlet weak var titleLabel: UILabel!
+    
+   
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        ppImageView.layer.cornerRadius = 24.0
         // Initialization code
       
     }
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+   /* override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
             
         }
@@ -29,7 +33,7 @@ class PhotoTableViewCell: UITableViewCell {
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-    
+    */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

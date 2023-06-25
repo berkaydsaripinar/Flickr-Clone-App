@@ -79,7 +79,26 @@
                             <outlet property="delegate" destination="Jkx-xD-smQ" id="Pgq-cL-Ltx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recent Photos" id="u24-vk-mkO"/>
+                    <navigationItem key="navigationItem" title="Recent Photos" id="pQH-pN-AlU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="K6J-cl-U58">
+                            <connections>
+                                <action selector="refleshButton:" destination="Jkx-xD-smQ" id="Le6-vJ-zim"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Jnf-im-J5l">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <attributedString key="attributedTitle">
+                            <fragment content="Lütfen bekleyin">
+                                <attributes>
+                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="NSFont" size="22" name="Tahoma"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </refreshControl>
                     <connections>
                         <segue destination="5vT-yy-JMK" kind="show" identifier="detailSegue" id="1rA-GR-3WC"/>
                     </connections>
@@ -96,12 +115,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Oz-JY-cWG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Oz-JY-cWG">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="448"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="560" id="IDu-tJ-xg8"/>
-                                    <constraint firstAttribute="width" constant="393" id="RyP-Sv-z9M"/>
-                                    <constraint firstAttribute="height" constant="448" id="tX4-uU-LPt"/>
+                                    <constraint firstAttribute="height" constant="448" id="Ski-T8-a8L"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tlo-pm-yTH">
@@ -119,6 +136,10 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPa-Iq-NHC">
                                 <rect key="frame" x="16" y="512" width="345" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="Xbq-SV-H6v"/>
+                                    <constraint firstAttribute="width" constant="345" id="w5A-PD-0vK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -127,25 +148,21 @@
                         <viewLayoutGuide key="safeArea" id="D6k-B3-OrB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0Oz-JY-cWG" firstAttribute="centerX" secondItem="8Xy-Vz-Ow0" secondAttribute="centerX" id="3X6-wO-8az"/>
                             <constraint firstItem="ivd-VF-ohG" firstAttribute="leading" secondItem="Tlo-pm-yTH" secondAttribute="trailing" constant="27" id="6pQ-H8-MDP"/>
-                            <constraint firstItem="0Oz-JY-cWG" firstAttribute="leading" secondItem="D6k-B3-OrB" secondAttribute="leading" id="8S2-c5-z3Q"/>
-                            <constraint firstItem="0Oz-JY-cWG" firstAttribute="trailing" secondItem="D6k-B3-OrB" secondAttribute="trailing" id="8co-zS-S13"/>
                             <constraint firstItem="MPa-Iq-NHC" firstAttribute="top" secondItem="Tlo-pm-yTH" secondAttribute="bottom" constant="8" symbolic="YES" id="9jo-W4-6AV"/>
                             <constraint firstItem="MPa-Iq-NHC" firstAttribute="top" secondItem="Tlo-pm-yTH" secondAttribute="bottom" constant="8" symbolic="YES" id="C5h-It-LlV"/>
-                            <constraint firstItem="0Oz-JY-cWG" firstAttribute="leading" secondItem="8Xy-Vz-Ow0" secondAttribute="leading" id="H8R-7S-21j"/>
+                            <constraint firstItem="Tlo-pm-yTH" firstAttribute="top" secondItem="0Oz-JY-cWG" secondAttribute="bottom" constant="8" id="FPK-wE-UQs"/>
                             <constraint firstItem="D6k-B3-OrB" firstAttribute="bottom" secondItem="MPa-Iq-NHC" secondAttribute="bottom" constant="64" id="Weh-Wg-NP2"/>
                             <constraint firstItem="D6k-B3-OrB" firstAttribute="trailing" secondItem="ivd-VF-ohG" secondAttribute="trailing" constant="100" id="Xmk-uw-DGL"/>
-                            <constraint firstItem="ivd-VF-ohG" firstAttribute="top" secondItem="0Oz-JY-cWG" secondAttribute="bottom" constant="22" id="Z8l-Pc-uG7"/>
                             <constraint firstItem="D6k-B3-OrB" firstAttribute="trailing" secondItem="MPa-Iq-NHC" secondAttribute="trailing" constant="32" id="dxs-S7-jjJ"/>
                             <constraint firstItem="MPa-Iq-NHC" firstAttribute="leading" secondItem="D6k-B3-OrB" secondAttribute="leading" constant="16" id="fuO-Fk-iXa"/>
-                            <constraint firstItem="0Oz-JY-cWG" firstAttribute="top" secondItem="8Xy-Vz-Ow0" secondAttribute="top" id="jNq-Ej-7XY"/>
-                            <constraint firstItem="Tlo-pm-yTH" firstAttribute="top" secondItem="0Oz-JY-cWG" secondAttribute="bottom" constant="8" symbolic="YES" id="k42-mx-OXw"/>
-                            <constraint firstAttribute="trailing" secondItem="0Oz-JY-cWG" secondAttribute="trailing" id="qMT-Gr-exi"/>
+                            <constraint firstItem="0Oz-JY-cWG" firstAttribute="leading" secondItem="D6k-B3-OrB" secondAttribute="leading" id="pyE-ll-sZc"/>
                             <constraint firstItem="Tlo-pm-yTH" firstAttribute="leading" secondItem="D6k-B3-OrB" secondAttribute="leading" constant="16" id="sVF-at-Hb0"/>
                             <constraint firstItem="MPa-Iq-NHC" firstAttribute="top" secondItem="ivd-VF-ohG" secondAttribute="bottom" constant="21" id="xjS-Vh-1Dy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="B6f-ZC-aVC"/>
+                    <navigationItem key="navigationItem" id="B6f-ZC-aVC" colorLabel="IBBuiltInLabel-Blue"/>
                     <connections>
                         <outlet property="aciklamaLabel" destination="MPa-Iq-NHC" id="UB0-wO-IDh"/>
                         <outlet property="imageView" destination="0Oz-JY-cWG" id="yvs-ht-OD5"/>

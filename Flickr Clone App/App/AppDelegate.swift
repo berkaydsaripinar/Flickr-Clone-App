@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Flickr Clone App
 //
-//  Created by yasin on 17.06.2023.
+//  Created by BDS on 17.06.2023.
 //
 
 import UIKit

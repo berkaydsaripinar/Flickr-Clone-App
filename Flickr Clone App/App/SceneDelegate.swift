@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Flickr Clone App
 //
-//  Created by yasin on 17.06.2023.
+//  Created by BSS on 17.06.2023.
 //
 
 import UIKit
